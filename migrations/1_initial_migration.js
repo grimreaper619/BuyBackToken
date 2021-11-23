@@ -1,4 +1,4 @@
-const Token = artifacts.require("RewardToken");
+const Token = artifacts.require("MommyEthereum");
 const Router = artifacts.require("IUniswapV2Router02");
 const currTime = Number(Math.round(new Date().getTime() / 1000));
 
@@ -16,7 +16,7 @@ module.exports = async function (deployer, network, accounts) {
 
   await routerInstance.addLiquidityETH(
     tokenInstance.address,
-    BigInt(supply / 10),
+    BigInt(supply / 2),
     0,
     0,
     routerInstance.address,
